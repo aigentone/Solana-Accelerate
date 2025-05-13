@@ -22,7 +22,8 @@ pub mod counter {
         Ok(())
     }
 
-    pub fn initialize(_ctx: Context<InitializeCounter>) -> Result<()> {
+    pub fn initialize(ctx: Context<InitializeCounter>) -> Result<()> {
+        ctx.accounts.counter.count = 0;
         Ok(())
     }
 
@@ -66,5 +67,5 @@ pub struct Update<'info> {
 #[account]
 #[derive(InitSpace)]
 pub struct Counter {
-    count: u8,
+    pub count: u8,
 }
