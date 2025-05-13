@@ -5,15 +5,15 @@ package_manager = "yarn"
 resolution = true
 skip-lint = false
 
-[programs.devnet]
-journal = "JRNA1S7xcX6P9sS5a95hTSGmD3Yk8z123456789ABC"
+[programs.localnet]
+new_crud_app = "Hqna9ZSSpc36qESLGZa6PJnngMgSSNStUMqU6apTmPqK"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
+cluster = "localnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
-test = "../node_modules/.bin/jest --preset ts-jest"
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
